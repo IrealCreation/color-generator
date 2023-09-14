@@ -14,10 +14,16 @@ function pickColor() {
 }
 
 function rollColors() {
-    colorName = pickColor();
-    displayColor(resultColor, colorName, " !");
+    rolls_nb = 6;
+    delay = 100;
+    for (let i = 1; i <= rolls_nb; i++) {
+        console.log(i);
+        setTimeout(() => {
+            console.log("delay");
+            const colorName = pickColor();
+            const append = (i == rolls_nb ? " !" : "");
+            displayColor(resultColor, colorName, append);
+        }, delay * i);
+    }
 }
-
-window.onload = (event) => {
-    buttonRoll.addEventListener("click", rollColors);
-}
+buttonRoll.addEventListener("click", rollColors);
