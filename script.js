@@ -1,26 +1,23 @@
-// DOM
-const resultColor = document.getElementById("result-color");
-const resultParagraph = document.getElementById("result-paragraph");
+const body = document.getElementsByTagName("body")[0];
+const darkSwitch = document.getElementById("dark-switch");
 
 // Chargement des couleurs
 let colors;
-fetch("colors.json")
+function fetchColors() {
+    fetch("colors.json")
     .then((response) => response.json())
     .then((json) => colors = json);
-
-function pickColor() {
-    if(typeof colors == "object") {
-        var keys = Object.keys(colors);
-        return keys[ keys.length * Math.random() << 0];
-    }
-    else {
-        console.log("Les couleurs ne sont pas chargées")
-    }
 }
+fetchColors();
 
-function rollColors() {
-    colorName = pickColor();
+function displayColor(domElement, colorName, append = "") {
     colorCode = colors[colorName];
-    resultColor.innerText = colorName;
-    resultColor.style.color = colorCode;
+    domElement.innerText = colorName + append;
+    domElement.style.color = colorCode;
 }
+
+function toggleDark() {
+    body.classList.toggle("dark");
+    console.log("toggleDark");
+}
+darkSwitch.addEventListener("click", toggleDark);

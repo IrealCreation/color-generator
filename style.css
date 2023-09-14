@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+* {
+	vertical-align: top;
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	font-family: "Open Sans", Helvetica, sans-serif;
+	background-color: white;
+	color: black;
+	text-align: justify;
+    transition: background-color 0.5s, color 0.5s;
+}
+body.dark {
+    background-color: black;
+    color: white;
+}
+
+main {
+    margin: 2em;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #ccc;
+    color: #333;
+    margin-top: 60px;
+    padding: 2em;
+    font-size: 0.85rem;
+}
+body.dark footer {
+    color: #ccc;
+    background-color: #333;
+}
+
+a, a:hover, a:focus {
+    text-decoration: underline;
+    text-decoration-style: solid;
+    text-decoration-style: dashed;
+    color: #555;
+}
+a:hover, a:focus {
+    color: #888;
+}
+body.dark a {
+	color: #aaa;
+}
+body.dark a:hover {
+    color: #ccc;
+}
+
+/* Nuit / Jour toggle */
+#dark-toggle {
+	position: fixed;
+	bottom: 4%;
+	right: 2%;
+}
+#dark-toggle input[type=checkbox]{
+	height: 0;
+	width: 0;
+	visibility: hidden;
+}
+#dark-toggle label {
+	cursor: pointer;
+	text-indent: -9999px;
+	width: 64px;
+	height: 32px;
+	background: var(--title-color);
+	display: inline-block;
+	border-radius: 32px;
+	position: relative;
+}
+#dark-toggle label:after {
+	content: '';
+	position: absolute;
+	top: 4px;
+	left: 4px;
+	width: 24px;
+	height: 24px;
+	background: grey;
+	border-radius: 24px;
+	transition: 0.3s;
+}
+#dark-toggle input:checked + label:after {
+	background: grey;
+}
+#dark-toggle input + label {
+	background: #ccc;
+}
+#dark-toggle input:checked + label:after {
+	left: calc(100% - 5px);
+	transform: translateX(-100%);
+}
+#dark-toggle svg {
+	display: inline-block;
+	width: 32px;
+	margin-left: 10px;
+	fill: var(--title-color);
+}
+#dark-toggle svg {
+	fill: grey;
+}
