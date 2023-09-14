@@ -7,6 +7,7 @@
 
 body {
 	margin: 0;
+    margin-bottom: 13em;
 	font-family: "Open Sans", Helvetica, sans-serif;
 	background-color: white;
 	color: black;
@@ -30,7 +31,7 @@ footer {
     color: #333;
     margin-top: 60px;
     padding: 2em;
-    font-size: 0.85rem;
+    font-size: 0.95rem;
 }
 body.dark footer {
     color: #ccc;
@@ -53,10 +54,30 @@ body.dark a:hover {
     color: #ccc;
 }
 
+main {
+    text-align: center;
+    font-size: 1.5em;
+}
+.infos {
+    font-size: 0.75em;
+    font-style: italic;
+    margin-top: 3em;
+}
+ul {
+    text-align: left;
+}
+button {
+    background-color: #ccc;
+    color: black;
+    padding: 1em;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
 /* Nuit / Jour toggle */
 #dark-toggle {
-	position: fixed;
-	bottom: 4%;
+	position: absolute;
+	top: -40px;
 	right: 2%;
 }
 #dark-toggle input[type=checkbox]{
