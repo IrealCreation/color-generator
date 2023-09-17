@@ -54,6 +54,15 @@ body.dark a:hover {
     color: #ccc;
 }
 
+@media screen and (max-width: 800px) {
+	body {
+		font-size: 0.9rem;
+	}
+	footer {
+		padding: 1em 2em;
+	}
+}
+
 main {
     text-align: center;
     font-size: 1.4em;
